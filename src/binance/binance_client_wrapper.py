@@ -12,7 +12,7 @@ from src.abstract.exchange_client_wrapper import ExchangeClientWrapper
 class BinanceClientWrapper(ExchangeClientWrapper):
     @staticmethod
     def create_instance(api_key, api_secret):
-        binance_client = Client(api_key, api_secret)
+        binance_client = Client(api_key, api_secret, tld='us')
         return BinanceClientWrapper(binance_client)
 
     def usd_price_for(self, asset):
